@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculador de propinas!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Yellowtail&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  
+</head>
+<body class="column">
+  <h1 class="titulo">Calculador de propina</h1>
+  <form class="form">
+    <label for="costo" class="text-xl font-medium text-black">Valor de lo consumido</label>
+    <input type="number" class="w-100" id="costo" min="0" placeholder="Ej: 500">
+    <label for="propina" class="text-xl font-medium text-black">Porcentaje de propina a dejar</label>
+    <input type="number" id="propina" min="0" placeholder="Ej: 15">
+    <label for="personas" class="text-xl font-medium text-black">Número de personas</label>
+    <input type="number" id="personas" min="1" value="1">
+    <div class="buttons">
+      <button id="calcular" class="btn">Calcular</button>
+      <button type="reset" class="btn">Borrar todo</button>
+      <a href="../index.html" class="btn">Volver</a>
+    </div>
+  </form>
+  <p id="resultado"></p>
+  <script src="app.js"></script>
+</body>
+</html>

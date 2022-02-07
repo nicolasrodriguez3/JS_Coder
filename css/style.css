@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Yellowtail&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem;
+  background: #c8ffff;
+  background: linear-gradient(90deg, #c8ffff 0%, #bbdeff 50%, #e5d1ff 100%);
+  background-size: 500%;
+  animation: fondo 10s infinite alternate;
+}
+
+@keyframes fondo {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Yellowtail", cursive;
+  font-size: 2.8rem;
+  color: #008cba;
+}
+
+.description {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+.form label {
+  display: block;
+  font-size: 1.2rem;
+}
+.form input {
+  margin: 0.6rem 0 1rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-size: 1.2rem;
+}
+.form input:focus-visible {
+  outline: 1px auto #008cba;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.btn {
+  padding: 0.6rem 0.8rem;
+  background: none;
+  font-size: 1.2rem;
+  color: #008cba;
+  border: 2px solid #008cba;
+  border-radius: 4px;
+}
+.btn:hover {
+  background: #008cba;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+/*# sourceMappingURL=style.css.map */
