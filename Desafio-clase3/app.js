@@ -34,21 +34,8 @@ function validar() {
 let palabra = prompt("Adivina mi nombre:");
 validar();
 let contador = 1;
-/*
-do {
-	if (palabra == "nico") {
-		alert("Sii!");
-		break;
-	}
-	if (palabra === "") break;
-	alert("Nop");
-	if (contador === 5) alert("Una ayudita: empieza con N");
-	contador++;
-	palabra = prompt("Adivina mi nombre:");
-	validar();
-} while (palabra != "nico");
-*/
-while (palabra != "nico") {
+
+while (palabra != "nicolas" && palabra != "nico") {
 	if (palabra === "") break;
 	alert("Nop");
 	if (contador === 3) alert("Una ayudita: empieza con N");
@@ -56,6 +43,9 @@ while (palabra != "nico") {
 	palabra = prompt("Adivina mi nombre:");
 	validar();
 }
-if (palabra == "nico") {
+if (palabra == "nico" || palabra == "nicolas") {
 	alert("Sii!");
 }
+
+
+document.getElementById("recargar").addEventListener("click", () => location.reload())
