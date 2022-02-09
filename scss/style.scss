@@ -97,11 +97,11 @@ a {
 	&:hover {
 		background: $primary;
 		color: #fff;
-		transition: all 0.3s;
+		transition: all 0.3s transform .1s;
 	}
 }
 button.btn:active{
-	transform: translateY(10px);
+	transform: translateY(2px);
 }
 
 // Desafio clase 6
@@ -111,5 +111,9 @@ button.btn:active{
 	width: 100%;
 	font-size: 1.2rem;
 	text-align: center;
-
+	cursor: pointer;
+}
+.tachado{
+	text-decoration: line-through;
+	font-style: italic;
 }

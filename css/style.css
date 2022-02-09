@@ -73,7 +73,7 @@ a {
   padding: 0.5rem;
   background: none;
   border: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #008cba;
   font-size: 1.2rem;
 }
 .form input:focus-visible {
@@ -98,7 +98,25 @@ a {
 .btn:hover {
   background: #008cba;
   color: #fff;
-  transition: all 0.3s;
+  transition: all 0.3s transform 0.1s;
+}
+
+button.btn:active {
+  transform: translateY(2px);
+}
+
+.tarea {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tachado {
+  text-decoration: line-through;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=style.css.map */
