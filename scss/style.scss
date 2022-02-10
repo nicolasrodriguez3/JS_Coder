@@ -103,8 +103,20 @@ a {
 button.btn:active{
 	transform: translateY(2px);
 }
+//Desafio clase 6
+#clase6{
+	.producto{
+		text-align: center;
+		margin-bottom: .5rem;
+		text-transform: capitalize;
+	}
 
-// Desafio clase 6
+
+
+}
+
+
+// Desafio clase 7
 .tarea{
 	padding: 0.5rem;
 	margin: .5rem 0;
