@@ -6,5 +6,9 @@
 	{
 		"titulo": "Desafio clase 4",
 		"ruta": "./Desafio-clase4/index.html"
+	},
+	{
+		"titulo": "Desafio clase 6",
+		"ruta": "./Desafio-clase6/index.html"
 	}
 ]

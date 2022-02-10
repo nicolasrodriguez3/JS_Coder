@@ -44,3 +44,8 @@ $personas.addEventListener("change", () => {
 		error = "Debe haber al menos una persona";
 	}
 });
+
+const borrar = document.getElementById('borrar')
+borrar.addEventListener('click', () => {
+	resultado.innerHTML = ''
+})

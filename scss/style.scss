@@ -74,7 +74,7 @@ a {
 		padding: 0.5rem;
 		background: none;
 		border: none;
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid $primary;
 		font-size: 1.2rem;
 		&:focus-visible {
 			outline: 1px auto $primary;
@@ -97,6 +97,23 @@ a {
 	&:hover {
 		background: $primary;
 		color: #fff;
-		transition: all 0.3s;
+		transition: all 0.3s transform .1s;
 	}
+}
+button.btn:active{
+	transform: translateY(2px);
+}
+
+// Desafio clase 6
+.tarea{
+	padding: 0.5rem;
+	margin: .5rem 0;
+	width: 100%;
+	font-size: 1.2rem;
+	text-align: center;
+	cursor: pointer;
+}
+.tachado{
+	text-decoration: line-through;
+	font-style: italic;
 }
