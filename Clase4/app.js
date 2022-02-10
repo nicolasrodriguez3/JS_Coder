@@ -46,8 +46,8 @@ function mostrarProductos() {
     item.appendChild(title);
     item.appendChild(precio);
     fragment.appendChild(item);
-    console.log(fragment, item);
   }
   const container = document.getElementById("container");
   container.appendChild(fragment);
 }
+mostrarProductos()

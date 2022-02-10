@@ -37,7 +37,7 @@ body {
 	text-align: center;
 	margin-bottom: 2rem;
 	font-family: "Yellowtail", cursive;
-	font-size: 2.8rem;
+	font-size: max(calc(1.5rem + 3vw), 3rem);
 	color: $primary;
 }
 .description {
