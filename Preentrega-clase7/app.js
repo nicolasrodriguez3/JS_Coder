@@ -1,13 +1,13 @@
 const resultado = document.getElementById("resultado");
 const btn = document.getElementById("btn").addEventListener("click", (e) => {
 	e.preventDefault()
-	const tarea = document.getElementById("tarea").value;
-	console.log(tarea);
+	let tarea = document.getElementById("tarea");
 	tareas.unshift({
-		tarea: tarea.trim(),
+		tarea: tarea.value.trim(),
 		id: Date.now(),
 		completada: false
 	});
+	tarea.value = "";
 	mostrarTareas();
 });
 const tareas = [];
@@ -28,6 +28,8 @@ const mostrarTareas = function () {
 
 //Tachar tareas
 resultado.addEventListener('click', (e) => {
-	console.log(e.composedPath()[0].classList.toggle('tachado'));
+	console.log(e.target.dataset.id);
+	//console.log(e.target.completada ? e.target.completada = false : e.target.completada = true)
+	e.target.classList.toggle('tachado');
 	
 })
