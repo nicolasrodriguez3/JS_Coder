@@ -13,7 +13,7 @@ const tareas = [
 ];
 mostrarTareas();
 
-const btn = document.getElementById("btn").addEventListener("click", (e) => {
+const form = document.querySelector("form").addEventListener("submit", (e) => {
 	e.preventDefault();
 	const tarea = document.getElementById("tarea");
 
