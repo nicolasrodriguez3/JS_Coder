@@ -139,5 +139,14 @@ ul li {
   opacity: 0.5;
   transform: scale(0.9);
 }
+#clase7 #papelera {
+  background-color: #ffffffaa;
+  border-radius: 8px;
+  width: 150px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /*# sourceMappingURL=style.css.map */
