@@ -2,12 +2,12 @@
 const tareas = [
 	{
 		tarea: "prueba",
-		id: Date.now(),
+		id: 1,
 		completada: false,
 	},
 	{
 		tarea: "prueba true",
-		id: Date.now(),
+		id: 2,
 		completada: true,
 	}
 ];
@@ -41,6 +41,7 @@ function mostrarTareas() {
 	let ul = document.createElement("ul");
 	tareas.forEach((i) => {
 		const li = document.createElement("li");
+		if (i.completada) li.classList.add("tachado")
 		li.classList.add("tarea");
 		li.setAttribute("data-id", i.id);
 		li.draggable = true;
@@ -61,6 +62,7 @@ resultado.addEventListener("click", (e) => {
 
 		actualizarEstadoTarea(id)
 	}
+	mostrarTareas()
 })
 
 function actualizarEstadoTarea(id) {
@@ -77,7 +79,6 @@ const papelera = document.getElementById("papelera");
 let elementoArrastrado;
 
 resultado.addEventListener("dragstart", (e) => {
-	console.log(e);
 	elementoArrastrado = e.target;
 	e.target.style.opacity = 0.5;
 	elementoArrastrado.style.transform = "scale(.5)";
@@ -96,8 +97,11 @@ papelera.addEventListener("dragleave", (e) => {
 });
 
 papelera.addEventListener("drop", (e) => {
-	console.log(e);
-	//document.querySelector("#resultado>ul").removeChild(elementoArrastrado);
+	console.log(e, elementoArrastrado.dataset.id);
+	let id = elementoArrastrado.dataset.id
+  //todo  corregir
+	console.log(tareas);
+	mostrarTareas()
 });
 
 function agregarBorrador() {
