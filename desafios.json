@@ -14,5 +14,9 @@
 	{
 		"titulo": "1era Preentrega",
 		"ruta": "./Preentrega-clase7/index.html"
+	},
+	{
+		"titulo": "Desafio clase 8 y 9",
+		"ruta": "./desafio-clase8/index.html"
 	}
 ]
