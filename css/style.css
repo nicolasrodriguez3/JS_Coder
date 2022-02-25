@@ -177,4 +177,27 @@ ul li {
   font-style: italic;
 }
 
+#preentrega2 .temporizador .form {
+  flex-direction: row;
+  gap: 1rem;
+}
+#preentrega2 .temporizador .form label {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+}
+#preentrega2 .temporizador #temporizador-reloj {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+#preentrega2 .parpadear {
+  animation: parpadear 2.5s infinite;
+}
+@keyframes parpadear {
+  30% {
+    opacity: 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

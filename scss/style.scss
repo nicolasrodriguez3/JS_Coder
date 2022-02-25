@@ -187,3 +187,32 @@ ul li {
 		}
 	}
 }
+
+#preentrega2{
+	.temporizador{
+		.form{
+			flex-direction: row;
+			gap: 1rem;
+
+			label{
+				display: flex;
+				flex-direction: column;
+				width: 80px;
+			}
+			
+		}
+		#temporizador-reloj{
+			font-size: 2rem;
+			text-align: center;
+			padding: 1rem;
+		}
+	}
+	.parpadear{
+		animation: parpadear 2.5s  infinite ;
+	}
+	@keyframes parpadear {
+		30%{
+			opacity: 0;
+		}
+	}
+}
