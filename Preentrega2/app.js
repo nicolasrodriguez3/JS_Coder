@@ -11,9 +11,7 @@ const actualizarTimer = () => {
 	if (segundosRestantes >= 0) {
 		resultado.textContent = `${Math.floor(segundosRestantes / 60)}:${segundosRestantes % 60}`;
 	} else {
-		resultado.textContent = `-${Math.floor(Math.abs(segundosRestantes) / 60)}:${
-			Math.abs(segundosRestantes) % 60
-		}`;
+		resultado.textContent = `-${Math.floor(Math.abs(segundosRestantes) / 60)}:${Math.abs(segundosRestantes) % 60}`;
 	}
 };
 
