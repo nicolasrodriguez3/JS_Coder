@@ -1,4 +1,7 @@
 "use strict";
+const resultado = document.getElementById("resultado");
+const inputTarea = document.getElementById("tarea");
+
 const tareas = [
 	{
 		tarea: "prueba",
@@ -15,13 +18,13 @@ mostrarTareas();
 
 const form = document.querySelector("form").addEventListener("submit", (e) => {
 	e.preventDefault();
-	const tarea = document.getElementById("tarea");
+	let tarea = inputTarea.value.trim()
 
 	// Solo agregar tareas si no estan en blanco
-	if (tarea.value !== "") {
+	if (tarea !== "") {
 		//agregar la tarea como un objeto al array tareas
 		tareas.unshift({
-			tarea: tarea.value.trim(),
+			tarea: tarea,
 			id: Date.now(),
 			completada: false,
 		});
@@ -29,23 +32,24 @@ const form = document.querySelector("form").addEventListener("submit", (e) => {
 		mostrarTareas();
 	}
 	// limpiar el input y focusearlo
-	tarea.value = "";
-	tarea.focus();
+	inputTarea.value = "";
+	inputTarea.focus();
 });
 
 function mostrarTareas() {
-	// obtener el div donde se agregan las tareas y limpiar el contenido
-	const resultado = document.getElementById("resultado");
+	// limpiar el contenido del div donde se agregan las tareas
 	resultado.textContent = "";
-
 	let ul = document.createElement("ul");
+
 	tareas.forEach((i) => {
 		const li = document.createElement("li");
+
 		if (i.completada) li.classList.add("tachado")
 		li.classList.add("tarea");
 		li.setAttribute("data-id", i.id);
 		li.draggable = true;
 		li.textContent = i.tarea;
+		
 		ul.appendChild(li);
 	});
 
