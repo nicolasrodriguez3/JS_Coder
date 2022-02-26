@@ -7,11 +7,21 @@ let timer;
 let segundosRestantes;
 let funcionando = false;
 
+const actualizarTimer = () => {
+	if (segundosRestantes >= 0) {
+		resultado.textContent = `${Math.floor(segundosRestantes / 60)}:${segundosRestantes % 60}`;
+	} else {
+		resultado.textContent = `-${Math.floor(Math.abs(segundosRestantes) / 60)}:${
+			Math.abs(segundosRestantes) % 60
+		}`;
+	}
+};
+
 const cuentaRegresiva = () => {
 	if (timer) clearInterval(timer);
 	return setInterval(() => {
 		segundosRestantes -= 1;
-		resultado.textContent = segundosRestantes;
+		actualizarTimer();
 		if (Math.abs(segundosRestantes) % 4 === 0 && segundosRestantes < 1) sonido.play();
 	}, 1000);
 };
@@ -20,11 +30,11 @@ const cuentaRegresiva = () => {
 temporizador.addEventListener("submit", (e) => {
 	e.preventDefault();
 
-	const horas = parseInt(document.querySelector("#horas").value) || 0;
 	const minutos = parseInt(document.querySelector("#minutos").value) || 0;
 	const segundos = parseInt(document.querySelector("#segundos").value) || 0;
-	segundosRestantes = horas * 60 * 60 + minutos * 60 + segundos;
-	resultado.textContent = segundosRestantes;
+	segundosRestantes = minutos * 60 + segundos;
+
+	actualizarTimer();
 
 	timer = cuentaRegresiva();
 });

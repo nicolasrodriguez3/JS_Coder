@@ -12,9 +12,8 @@
 			<div class="cronometro"></div>
 			<div class="temporizador">
 				<form class="form" id="temporizador">
-					<label for="horas">Hs:<input type="number" id="horas" min="0" placeholder="00" /></label>
 					<label for="minutos"
-						>Min:<input type="number" id="minutos" min="0" max="60" value="10" placeholder="00"
+						>Min:<input type="number" id="minutos" min="0" max="99" value="1" placeholder="00"
 					/></label>
 					<label for="segundos"
 						>Seg:<input type="number" id="segundos" min="0" max="60" placeholder="00" 
@@ -22,7 +21,7 @@
 					<button type="submit">Iniciar</button>
 					<button type="button" id="parar-temporizador">Parar</button>
 				</form>
-				<div id="temporizador-reloj" >9:50</div>
+				<div id="temporizador-reloj" ></div>
 			</div>
 		</div>
 

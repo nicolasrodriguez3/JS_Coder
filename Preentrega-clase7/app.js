@@ -43,11 +43,8 @@ function mostrarTareas() {
 
 	tareas.forEach((i) => {
 		const li = document.createElement("li");
-<<<<<<< HEAD
 
 		if (i.completada) li.classList.add("tachado")
-=======
->>>>>>> origin/main
 		li.classList.add("tarea");
 		li.setAttribute("data-id", i.id);
 		li.draggable = true;
