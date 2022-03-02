@@ -9,7 +9,7 @@ fetch("./desafios.json")
 			const anchor = document.createElement("a");
 			anchor.textContent = desafio.titulo;
 			anchor.href = desafio.ruta;
-			anchor.className = "btn";
+			anchor.className = "btn-primary";
 			fragment.appendChild(anchor);
 			resultado.appendChild(fragment);
 		}
