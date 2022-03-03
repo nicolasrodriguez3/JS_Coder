@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Yellowtail&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
 * {
   margin: 0;
   padding: 0;
@@ -188,6 +189,12 @@ ul li {
 
 #preentrega2 .temporizador .form {
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+#preentrega2 .temporizador .form > div {
+  display: flex;
   gap: 1rem;
 }
 #preentrega2 .temporizador .form label {
@@ -200,8 +207,11 @@ ul li {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
+}
+#preentrega2 .temporizador .form .btn:first-child, #preentrega2 .temporizador .form .btn-primary:first-child, #preentrega2 .temporizador .form .btn-secondary:first-child {
+  font-size: 2rem;
 }
 #preentrega2 .temporizador #temporizador-reloj {
   font-size: 2rem;

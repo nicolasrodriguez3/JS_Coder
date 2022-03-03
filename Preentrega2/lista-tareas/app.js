@@ -3,18 +3,7 @@ const resultado = document.getElementById("resultado");
 const inputTarea = document.getElementById("tarea");
 const form = document.querySelector("form");
 
-let tareas = [
-	{
-		tarea: "prueba",
-		id: 1,
-		completada: false,
-	},
-	{
-		tarea: "prueba true",
-		id: 2,
-		completada: true,
-	},
-];
+let tareas = [];
 
 // obtener tareas de local storage si existen
 tareas = JSON.parse(localStorage.getItem("listaTareas")) || tareas

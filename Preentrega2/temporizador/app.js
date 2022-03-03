@@ -5,6 +5,9 @@ const resultado = document.querySelector("#temporizador-reloj");
 const btnStart = temporizador[2];
 const btnReset = temporizador[3];
 const sonido = new Audio("./sound/SD_ALERT.mp3");
+const iconPausa = "<i class='fa-solid fa-pause'></i>"
+const iconPlay = "<i class='fa-solid fa-play'></i>"
+
 
 /* ************ Variables iniciales ************ */
 let timer;
@@ -43,14 +46,14 @@ const iniciarTemporizador = (e) => {
 		actualizarTimer();
 		timer = cuentaRegresiva();
 
-		btnStart.textContent = "Pausar";
+		btnStart.innerHTML = iconPausa;
 	} else if (timer === "pausa") {
 		resultado.classList.remove("parpadear");
 		actualizarTimer();
 		timer = cuentaRegresiva();
-		btnStart.textContent = "Pausar";
+		btnStart.innerHTML = iconPausa;
 	} else {
-		btnStart.textContent = "Iniciar";
+		btnStart.innerHTML = iconPlay;
 		pararTemporizador();
 	}
 };
@@ -71,8 +74,8 @@ const pararTemporizador = () => {
 const resetTemporizador = () => {
 	clearInterval(timer);
 	timer = null;
-	resultado.textContent = "";
-	btnStart.textContent = "Iniciar";
+	resultado.innerHTML = "";
+	btnStart.innerHTML = iconPlay;
 };
 
 /* ************ Eventos ************ */

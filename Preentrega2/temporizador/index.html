@@ -13,12 +13,18 @@
 			<div class="cronometro"></div>
 			<div class="temporizador">
 				<form class="form" id="temporizador">
-					<label for="minutos"
+					<div>
+						<label for="minutos"
 						>Min:<input type="number" id="minutos" min="0" max="99" value="1" placeholder="00"
 					/></label>
 					<label for="segundos">Seg:<input type="number" id="segundos" min="0" max="60" placeholder="00" /></label>
-					<button type="submit" class="btn-primary">Iniciar</button>
+					</div>
+					<div>
+						<button type="submit" class="btn-primary">
+							<i class="fa-solid fa-play"></i>
+						</button>
 					<button type="button" class="btn-secondary">Reset</button>
+					</div>
 				</form>
 				<div id="temporizador-reloj"></div>
 				<div class="buttons">
