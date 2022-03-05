@@ -4,7 +4,7 @@ const temporizador = document.querySelector("#temporizador");
 const resultado = document.querySelector("#temporizador-reloj");
 const btnStart = temporizador[2];
 const btnReset = temporizador[3];
-const sonido = new Audio("./sound/SD_ALERT.mp3");
+const sonido = new Audio("../sound/SD_ALERT.mp3");
 const iconPausa = "<i class='fa-solid fa-pause'></i>"
 const iconPlay = "<i class='fa-solid fa-play'></i>"
 

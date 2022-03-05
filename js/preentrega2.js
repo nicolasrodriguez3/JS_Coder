@@ -12,7 +12,6 @@ function clock() {
 	setTimeout(clock, 1000);
 }
 function agregarCero(i) {
-	if (i < 10) return (i = "0" + i);
-	return i;
+	 return (i < 10) ? (i = "0" + i) : i;
 }
 document.addEventListener("DOMContentLoaded", clock);
