@@ -2,18 +2,7 @@
 const resultado = document.getElementById("resultado");
 const inputTarea = document.getElementById("tarea");
 
-const tareas = [
-	{
-		tarea: "prueba",
-		id: Date.now(),
-		completada: false,
-	},
-	{
-		tarea: "prueba true",
-		id: Date.now(),
-		completada: true,
-	}
-];
+const tareas = [];
 mostrarTareas();
 
 const form = document.querySelector("form").addEventListener("submit", (e) => {

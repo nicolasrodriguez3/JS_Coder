@@ -23,8 +23,7 @@ const actualizarTimer = () => {
 };
 
 function agregarCero(i) {
-	if ((i % 60) < 10) return (i = "0" + (i % 60));
-	return (i % 60);
+	return ((i % 60) < 10) ? (i = "0" + (i % 60)) : (i % 60);
 }
 
 const cuentaRegresiva = () => {
