@@ -1,26 +1,26 @@
 [
 	{
 		"titulo": "Desafio clase 3",
-		"ruta": "./Desafio-clase3/index.html"
+		"ruta": "./pages/clase3.html"
 	},
 	{
 		"titulo": "Desafio clase 4",
-		"ruta": "./Desafio-clase4/index.html"
+		"ruta": "./pages/clase4.html"
 	},
 	{
 		"titulo": "Desafio clase 6",
-		"ruta": "./Desafio-clase6/index.html"
+		"ruta": "./pages/clase6.html"
 	},
 	{
 		"titulo": "1era Preentrega",
-		"ruta": "./Preentrega-clase7/index.html"
+		"ruta": "./pages/preentrega1.html"
 	},
 	{
 		"titulo": "Desafio clase 8 y 9",
-		"ruta": "./Desafio-clase8/index.html"
+		"ruta": "./pages/clase8.html"
 	},
 	{
 		"titulo": "2da Preentrega",
-		"ruta": "./Preentrega2/index.html"
+		"ruta": "./pages/preentrega2.html"
 	}
 ]
