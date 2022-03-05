@@ -1,5 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Yellowtail&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+.btn, a, .btn-secondary, .btn-primary {
+  cursor: pointer;
+  padding: 0.6rem 0.8rem;
+  background: none;
+  font-size: 1.2rem;
+}
+.btn:active, a:active, .btn-secondary:active, .btn-primary:active {
+  transform: translateY(2px);
+}
+
+.btn-primary {
+  color: #009DD6;
+  border: 2px solid #009DD6;
+  border-radius: 4px;
+}
+.btn-primary:hover {
+  background-color: #009DD6;
+  color: #fff;
+  transition: all 0.3s transform 0.1s;
+}
+
+.btn-secondary {
+  color: #009DD6;
+  border: none;
+  background: none;
+}
+
+a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+a:hover {
+  color: #BE15D6;
+}
+
+.link:link {
+  color: #009DD6;
+}
+.link:active {
+  transform: scale(0.98);
+}
+.link:visited {
+  color: #009DD6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -50,12 +96,6 @@ body {
   gap: 1rem;
 }
 
-a {
-  padding: 0.5rem;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
 .column {
   flex-direction: column !important;
 }
@@ -89,33 +129,6 @@ a {
   justify-content: center;
   gap: 1rem;
   padding: 1rem 0;
-}
-
-.btn, .btn-secondary, .btn-primary {
-  cursor: pointer;
-  padding: 0.6rem 0.8rem;
-  background: none;
-  font-size: 1.2rem;
-}
-.btn:active, .btn-secondary:active, .btn-primary:active {
-  transform: translateY(2px);
-}
-
-.btn-primary {
-  color: #009DD6;
-  border: 2px solid #009DD6;
-  border-radius: 4px;
-}
-.btn-primary:hover {
-  background-color: #009DD6;
-  color: #fff;
-  transition: all 0.3s transform 0.1s;
-}
-
-.btn-secondary {
-  color: #009DD6;
-  border: none;
-  background: none;
 }
 
 #resultado {
@@ -202,7 +215,7 @@ ul li {
   flex-direction: column;
   width: 80px;
 }
-#preentrega2 .temporizador .form .btn, #preentrega2 .temporizador .form .btn-primary, #preentrega2 .temporizador .form .btn-secondary {
+#preentrega2 .temporizador .form .btn, #preentrega2 .temporizador .form .btn-primary, #preentrega2 .temporizador .form .btn-secondary, #preentrega2 .temporizador .form a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,7 +223,7 @@ ul li {
   width: 75px;
   height: 75px;
 }
-#preentrega2 .temporizador .form .btn:first-child, #preentrega2 .temporizador .form .btn-primary:first-child, #preentrega2 .temporizador .form .btn-secondary:first-child {
+#preentrega2 .temporizador .form .btn:first-child, #preentrega2 .temporizador .form .btn-primary:first-child, #preentrega2 .temporizador .form .btn-secondary:first-child, #preentrega2 .temporizador .form a:first-child {
   font-size: 2rem;
 }
 #preentrega2 .temporizador #temporizador-reloj {

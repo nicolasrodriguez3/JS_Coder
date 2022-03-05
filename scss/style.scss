@@ -1,4 +1,9 @@
+// Modulos
 @import "variables";
+@import "buttons";
+@import "links";
+
+//Fonts
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Yellowtail&display=swap");
 
 // Icons
@@ -56,11 +61,7 @@ body {
 	flex-wrap: wrap;
 	gap: 1rem;
 }
-a {
-	padding: 0.5rem;
-	text-decoration: none;
-	font-size: 1.2rem;
-}
+
 .column {
 	flex-direction: column !important;
 }
@@ -94,33 +95,7 @@ a {
 	gap: 1rem;
 	padding: 1rem 0;
 }
-.btn {
-	cursor: pointer;
-	padding: 0.6rem 0.8rem;
-	background: none;
-	font-size: 1.2rem;
 
-	&:active {
-		transform: translateY(2px);
-	}
-}
-.btn-primary {
-	@extend .btn;
-	color: $primary;
-	border: 2px solid $primary;
-	border-radius: 4px;
-	&:hover {
-		background-color: $primary;
-		color: #fff;
-		transition: all 0.3s transform 0.1s;
-	}
-}
-.btn-secondary {
-	@extend .btn;
-	color: $primary;
-	border: none;
-	background: none;
-}
 #resultado {
 	width: 100vw;
 	max-width: 600px;

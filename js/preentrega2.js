@@ -12,6 +12,48 @@ function clock() {
 	setTimeout(clock, 1000);
 }
 function agregarCero(i) {
-	 return (i < 10) ? (i = "0" + i) : i;
+	return i < 10 ? (i = "0" + i) : i;
 }
 document.addEventListener("DOMContentLoaded", clock);
+
+/*********** Snippets  ***********/
+const listaTareas = "/pages/app-listatareas.html";
+const temporizador = "/pages/app-temporizador.html";
+const volver = "/pages/preentrega2.html";
+
+/*********** Detectar click  ***********/
+const detectarApp = (e) => {
+	let app = null;
+
+	switch (e.target.dataset.name) {
+		case "lista-tareas":
+			app = listaTareas;
+			break;
+		case "temporizador":
+			app = temporizador;
+			break;
+		case "volver":
+			app = volver;
+			break;
+		default:
+			app = null;
+			break;
+	}
+	return app;
+};
+
+const insertarApp = (e) => {
+	e.preventDefault();
+	app = detectarApp(e);
+	if (!app) return; //si no si hizo clic en un link, salimos de la función
+
+	const contenedor = document.querySelector("#contenido");
+	console.log(app, contenedor);
+	console.log(app);
+	fetch(app)
+		.then((res) => res.text())
+		.then(data => contenedor.innerHTML = data)
+		
+};
+
+document.addEventListener("click", insertarApp);
