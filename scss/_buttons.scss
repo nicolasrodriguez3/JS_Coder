@@ -1,0 +1,27 @@
+.btn {
+	cursor: pointer;
+	padding: 0.6rem 0.8rem;
+	background: none;
+	font-size: 1.2rem;
+
+	&:active {
+		transform: translateY(2px);
+	}
+}
+.btn-primary {
+	@extend .btn;
+	color: $primary;
+	border: 2px solid $primary;
+	border-radius: 4px;
+	&:hover {
+		background-color: $primary;
+		color: #fff;
+		transition: all 0.3s transform 0.1s;
+	}
+}
+.btn-secondary {
+	@extend .btn;
+	color: $primary;
+	border: none;
+	background: none;
+}
