@@ -37,8 +37,9 @@ const cuentaRegresiva = () => {
 				icon: 'error',
 				title: 'Oops...'
 		})
-};
-
+	}
+});
+}
 const iniciarTemporizador = (e) => {
 	e.preventDefault();
 

@@ -16,9 +16,11 @@ function agregarCero(i) {
 }
 
 /*********** Snippets  ***********/
-const inicio = "/pages/app-index.html"
+const inicio = "/pages/app-index.html";
 const listaTareas = "/pages/app-listatareas.html";
-const temporizador = "/pages/app-temporizador.html";
+const timer = "/pages/app-temporizador.html";
+
+const links = document.querySelectorAll("a")
 
 /*********** Detectar click  ***********/
 const detectarApp = (e) => {
@@ -29,34 +31,28 @@ const detectarApp = (e) => {
 			app = listaTareas;
 			break;
 		case "temporizador":
-			app = temporizador;
+			app = timer;
 			break;
 		case "volver":
 			app = inicio;
-			break;
-		default:
-			app = null;
 			break;
 	}
 	return app;
 };
 
 const insertarApp = (e) => {
+	console.log(e);
 	e.preventDefault();
-	app = detectarApp(e);
-	if (!app) return; //si no si hizo clic en un link, salimos de la función
+	if (!e.target.dataset.name) return; //si no si hizo clic en un link, salimos de la función
+	let app = detectarApp(e);
 
 	const contenedor = document.querySelector("#contenido");
 	console.log(app, contenedor);
 	console.log(app);
 	fetch(app)
 		.then((res) => res.text())
-		.then(data => contenedor.innerHTML = data)
-		
+		.then((data) => (contenedor.innerHTML = data));
 };
 
 document.addEventListener("DOMContentLoaded", clock);
-document.addEventListener("DOMContentLoaded", insertarApp);
-document.addEventListener("click", insertarApp);
-
-
+links.forEach(link => link.addEventListener("click", insertarApp))

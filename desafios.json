@@ -24,6 +24,10 @@
 		"ruta": "./pages/preentrega2.html"
 	},
 	{
+		"titulo": "Desafio clase 12",
+		"ruta": "./pages/preentrega3.html"
+	},
+	{
 		"titulo": "3ra Preentrega",
 		"ruta": "./pages/preentrega3.html"
 	}
