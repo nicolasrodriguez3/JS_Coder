@@ -22,5 +22,9 @@
 	{
 		"titulo": "2da Preentrega",
 		"ruta": "./pages/preentrega2.html"
+	},
+	{
+		"titulo": "3ra Preentrega",
+		"ruta": "./pages/preentrega3.html"
 	}
 ]

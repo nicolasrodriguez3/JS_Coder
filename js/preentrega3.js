@@ -55,6 +55,8 @@ const insertarApp = (e) => {
 		
 };
 
+document.addEventListener("DOMContentLoaded", clock);
 document.addEventListener("DOMContentLoaded", insertarApp);
 document.addEventListener("click", insertarApp);
+
 

@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", clock);
 /*********** Snippets  ***********/
 const listaTareas = "/pages/app-listatareas.html";
 const temporizador = "/pages/app-temporizador.html";
-const volver = "/pages/preentrega2.html";
-
+const inicio = () => window.location.href = "../index.html"
 /*********** Detectar click  ***********/
 const detectarApp = (e) => {
 	let app = null;
@@ -33,7 +32,7 @@ const detectarApp = (e) => {
 			app = temporizador;
 			break;
 		case "volver":
-			app = volver;
+			inicio()
 			break;
 		default:
 			app = null;

@@ -32,7 +32,11 @@ const cuentaRegresiva = () => {
 		segundosRestantes -= 1;
 		actualizarTimer();
 		if (segundosRestantes < 1 && Math.abs(segundosRestantes) % 4 === 0 && segundosRestantes > -30) sonido.play();
-	}, 1000);
+		if(segundosRestantes < 1) {
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...'
+		})
 };
 
 const iniciarTemporizador = (e) => {
