@@ -20,21 +20,24 @@ const inicio = "/pages/app-index.html";
 const listaTareas = "/pages/app-listatareas.html";
 const timer = "/pages/app-temporizador.html";
 
-const links = document.querySelectorAll("a")
+const links = document.getElementById("links-desafios")
 
 /*********** Detectar click  ***********/
 const detectarApp = (e) => {
-	let app = null;
+	let app = {};
 
 	switch (e.target.dataset.name) {
 		case "lista-tareas":
-			app = listaTareas;
+			app.ruta = listaTareas;
+			app.script = "../preentrega3-listatareas.js"
 			break;
 		case "temporizador":
-			app = timer;
+			app.ruta = timer;
+			app.script = "../preentrega3-temporizador.js"
 			break;
-		case "volver":
-			app = inicio;
+		default:
+			app.ruta = inicio;
+			app.script = "../js/preentrega3.js"
 			break;
 	}
 	return app;
@@ -49,10 +52,13 @@ const insertarApp = (e) => {
 	const contenedor = document.querySelector("#contenido");
 	console.log(app, contenedor);
 	console.log(app);
-	fetch(app)
+	fetch(app.ruta)
 		.then((res) => res.text())
-		.then((data) => (contenedor.innerHTML = data));
+		.then((data) => {
+			contenedor.innerHTML = data;
+			document.appendChild = app.script
+		});
 };
 
 document.addEventListener("DOMContentLoaded", clock);
-links.forEach(link => link.addEventListener("click", insertarApp))
+links.addEventListener("click", insertarApp)

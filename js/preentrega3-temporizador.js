@@ -5,8 +5,9 @@ const resultado = document.querySelector("#temporizador-reloj");
 const btnStart = temporizador[2];
 const btnReset = temporizador[3];
 const sonido = new Audio("../sound/SD_ALERT.mp3");
-const iconPausa = "<i class='fa-solid fa-pause'></i>";
-const iconPlay = "<i class='fa-solid fa-play'></i>";
+const iconPausa = "<i class='fa-solid fa-pause'></i>"
+const iconPlay = "<i class='fa-solid fa-play'></i>"
+
 
 /* ************ Variables iniciales ************ */
 let timer;
@@ -15,14 +16,14 @@ let segundosRestantes = null;
 /* ************ Funciones ************ */
 const actualizarTimer = () => {
 	if (segundosRestantes >= 0) {
-		resultado.textContent = `${Math.floor(segundosRestantes / 60)}:${agregarCero(Math.abs(segundosRestantes))}`;
+		resultado.textContent = `${Math.floor(segundosRestantes / 60)}:${agregarCero(segundosRestantes)}`;
 	} else {
-		resultado.textContent = `-${Math.floor(Math.abs(segundosRestantes) / 60)}:${agregarCero(Math.abs(segundosRestantes))}`;
+		resultado.textContent = `-${Math.floor(Math.abs(segundosRestantes) / 60)}:${agregarCero(segundosRestantes)}`;
 	}
 };
 
 function agregarCero(i) {
-	return i % 60 < 10 ? (i = "0" + (i % 60)) : i % 60;
+	return ((i % 60) < 10) ? (i = "0" + (i % 60)) : (i % 60);
 }
 
 const cuentaRegresiva = () => {
@@ -31,14 +32,14 @@ const cuentaRegresiva = () => {
 		segundosRestantes -= 1;
 		actualizarTimer();
 		if (segundosRestantes < 1 && Math.abs(segundosRestantes) % 4 === 0 && segundosRestantes > -30) sonido.play();
-		if (segundosRestantes === 0) {
+		if(segundosRestantes < 1) {
 			Swal.fire({
-				icon: "info",
-				title: "Tiempo cumplido!",
-			});
-		}
-	}, 1000);
-};
+				icon: 'error',
+				title: 'Oops...'
+		})
+	}
+});
+}
 const iniciarTemporizador = (e) => {
 	e.preventDefault();
 

@@ -1,5 +1,5 @@
 let resultado = document.getElementById("desafios");
-fetch("./desafios.json")
+fetch("../desafios.json")
 	.then((response) => response.json())
 	.then((data) => {
 		let desafios = data;

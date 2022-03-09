@@ -65,7 +65,9 @@ resultado.addEventListener("click", (e) => {
 
 function actualizarEstadoTarea(id) {
 	tareas.forEach((tarea) => {
-		if (tarea.id == id)	tarea.completada ? (tarea.completada = false) : (tarea.completada = true);
+		if (tarea.id == id) {
+			tarea.completada ? (tarea.completada = false) : (tarea.completada = true);
+		}
 		mostrarTareas()
 	});
 }
@@ -76,6 +78,7 @@ const papelera = document.getElementById("papelera");
 let elementoArrastrado;
 
 resultado.addEventListener("dragstart", (e) => {
+	console.log(e);
 	elementoArrastrado = e.target;
 	e.target.style.opacity = 0.5;
 	elementoArrastrado.style.transform = "scale(.5)";
@@ -96,16 +99,11 @@ papelera.addEventListener("dragleave", () => {
 
 papelera.addEventListener("drop", (e) => {
 	papelera.style.opacity = 1;
+	console.log(elementoArrastrado.dataset.id);
 	tareas.forEach((tarea, i) => {
+		console.log(tarea.id, elementoArrastrado.dataset.id);
 		if(tarea.id == elementoArrastrado.dataset.id) tareas.splice(i, 1)
 	})
-	let timerInterval
-Swal.fire({
-  text: 'Tarea eliminada',
-  timer: 2000,
-  timerProgressBar: true,
-  willClose: () => clearInterval(timerInterval)
-})
 	mostrarTareas()
 });
 
