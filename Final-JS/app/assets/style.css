@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Yellowtail&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+.btn, a, .btn-secondary, .btn-primary {
+  cursor: pointer;
+  padding: 0.6rem 0.8rem;
+  background: none;
+  font-size: 1.2rem;
+}
+.btn:active, a:active, .btn-secondary:active, .btn-primary:active {
+  transform: translateY(2px);
+}
+
+.btn-primary {
+  color: #009DD6;
+  border: 2px solid #009DD6;
+  border-radius: 4px;
+}
+.btn-primary:hover {
+  background-color: #009DD6;
+  color: #fff;
+  transition: all 0.3s transform 0.1s;
+}
+
+.btn-secondary {
+  color: #009DD6;
+  border: none;
+  background: none;
+}
+
+a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+a:hover {
+  color: #BE15D6;
+}
+
+.link:link {
+  color: #009DD6;
+}
+.link:active {
+  transform: scale(0.98);
+}
+.link:visited {
+  color: #009DD6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem;
+  background: #c8ffff;
+  background: linear-gradient(90deg, #c8ffff 0%, #bbdeff 50%, #e5d1ff 100%);
+  background-size: 500%;
+  animation: fondo 10s infinite alternate;
+}
+
+@keyframes fondo {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Yellowtail", cursive;
+  font-size: max(1.5rem + 3vw, 3rem);
+  color: #009DD6;
+}
+
+.description {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.column {
+  flex-direction: column !important;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+.form label {
+  display: block;
+  font-size: 1.2rem;
+}
+.form input {
+  margin: 0.6rem 0 1rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #009DD6;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+}
+.form input:focus-visible {
+  transform: scale(1.05);
+  border-color: #BE15D6;
+  outline: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+#resultado {
+  width: 100vw;
+  max-width: 600px;
+}
+
+ul li {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+}
+
+#clase6 .producto {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+#clase7 .tarea {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#clase7 .tachado {
+  text-decoration: line-through;
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+#clase7 #papelera {
+  background-color: #ffffffaa;
+  border-radius: 8px;
+  width: 150px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#clase8 label {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+#clase8 select {
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 4px;
+  padding: 3px;
+}
+#clase8 .container {
+  flex-direction: column;
+  gap: 2rem;
+}
+#clase8 #resultado .item {
+  margin-bottom: 0.5rem;
+  padding: 0.8rem 1rem;
+  background-color: #ffffff44;
+  border-radius: 10px;
+}
+#clase8 #resultado .item h2 {
+  margin-bottom: 0.5rem;
+  color: #009DD6;
+}
+#clase8 #resultado .item p {
+  font-style: italic;
+}
+
+#preentrega2 .temporizador .form {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+#preentrega2 .temporizador .form > div {
+  display: flex;
+  gap: 1rem;
+}
+#preentrega2 .temporizador .form label {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+}
+#preentrega2 .temporizador .form .btn, #preentrega2 .temporizador .form .btn-primary, #preentrega2 .temporizador .form .btn-secondary, #preentrega2 .temporizador .form a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+#preentrega2 .temporizador .form .btn:first-child, #preentrega2 .temporizador .form .btn-primary:first-child, #preentrega2 .temporizador .form .btn-secondary:first-child, #preentrega2 .temporizador .form a:first-child {
+  font-size: 2rem;
+}
+#preentrega2 .temporizador #temporizador-reloj {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+#preentrega2 .parpadear {
+  animation: parpadear 2.5s infinite;
+}
+@keyframes parpadear {
+  30% {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

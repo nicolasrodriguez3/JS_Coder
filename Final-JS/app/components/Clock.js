@@ -1,4 +1,4 @@
-export function clock() {
+export function Clock() {
 	const clock = document.createElement("div")
 	const today = new Date();
 	let hr = today.getHours();
