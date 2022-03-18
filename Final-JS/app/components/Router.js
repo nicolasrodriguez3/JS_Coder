@@ -1,11 +1,8 @@
-import { Apps } from "./Apps.js";
-import { Clock } from "./Clock.js";
 import { Home } from "./Home.js";
 import { ListaTareas } from "./ListaTareas.js";
-import { Loader } from "./Loader.js";
 import { logicaListaTareas } from "./logicaListaTareas.js";
 import { mostrarTareas } from "./mostrarTareas.js";
-import { Title } from "./Title.js";
+import { Temporizador } from "./Temporizador.js";
 
 export function Router() {
 	const d = document,
@@ -28,10 +25,12 @@ export function Router() {
 		$form.addEventListener("submit", logicaListaTareas);
 
 	} else if (hash === "#/clima") {
-		console.log("Clima");
+		$root.innerHTML = Temporizador()
 	} else if (hash === "#/temporizador") {
-		$root.innerHTML = "temporizador";
+		$root.innerHTML = Temporizador()
 	} else {
 		Home();
 	}
+
+
 }

@@ -1,0 +1,21 @@
+a {
+	color: azure;
+	padding: 0.5rem;
+	text-decoration: none;
+	font-size: 1.2rem;
+	
+	&:hover {
+		color: $acento;
+	}
+}
+.link{
+	&:link{
+		color: $primary;
+	}
+	&:active {
+		transform: scale(0.98);
+	}
+	&:visited {
+		color: $primary;
+	}
+}

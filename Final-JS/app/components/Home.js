@@ -5,8 +5,8 @@ import { Clock } from "./Clock.js";
 
 export function Home(){
 	const $root = document.getElementById("root");
-	$root.appendChild(Loader());
+	//$root.appendChild(Loader());
 	$root.appendChild(Title());
-	$root.appendChild(Clock());
+	//$root.appendChild(Clock());
 	$root.appendChild(Apps());
 }

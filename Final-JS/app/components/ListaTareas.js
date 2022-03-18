@@ -9,5 +9,6 @@ export function ListaTareas() {
 		<div id="resultado"></div>
 		<div id="papelera">Borrar</div>
 	</div>
+	<div><a href="#/"><img src="./app/assets/arrow-circulo-96.png"></a></div>
 	`;
 }

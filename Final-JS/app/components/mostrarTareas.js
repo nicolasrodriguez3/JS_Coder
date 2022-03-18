@@ -1,8 +1,8 @@
 export function mostrarTareas(tareas) {
-	
+	const $resultado = document.getElementById("resultado");
+	console.log(tareas);
 	// limpiar el contenido del div donde se agregan las tareas
 	//resultado.textContent = "";
-
 	const $ul = document.createElement("ul");
 
 	tareas.forEach((i) => {
@@ -19,6 +19,6 @@ export function mostrarTareas(tareas) {
 	localStorage.setItem("listaTareas", JSON.stringify(tareas));
 
 	//agregar las tareas
-	return $ul
+	$resultado.appendChild($ul)
 
 }

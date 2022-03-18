@@ -2,8 +2,12 @@ import { mostrarTareas } from "./mostrarTareas.js";
 
 export function logicaListaTareas(e) {
 	e.preventDefault()
+	let tareas = JSON.parse(localStorage.getItem("listaTareas")) || [{
+		tarea: "tarea",
+		id: 1,
+		completada: false,
+	}];
 
-	const resultado = document.getElementById("resultado");
 	const inputTarea = document.getElementById("tarea");
 	const form = document.querySelector("form");
 
@@ -21,7 +25,7 @@ export function logicaListaTareas(e) {
 				completada: false,
 			});
 
-			mostrarTareas();
+			mostrarTareas(tareas);
 		}
 		// limpiar el input y focusearlo
 		form.reset();
