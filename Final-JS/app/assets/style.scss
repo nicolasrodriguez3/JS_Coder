@@ -69,7 +69,7 @@ body {
 .column {
 	flex-direction: column !important;
 }
-.form {
+.form-lista-tareas {
 	display: flex;
 	flex-direction: column;
 	max-width: 500px;
@@ -110,4 +110,24 @@ ul li {
 	list-style: none;
 	width: 100%;
 	text-align: center;
+}
+#go-back{
+	position: absolute;
+	top: 2%;
+	left: 2%;
+	a{
+		padding: 0;
+	}
+	svg{
+		$size: 80px;
+		width: $size;
+		height: auto;
+		fill: $blanco;
+		&:hover{
+			fill: $primary;
+		}
+		&:active{
+			transform: rotate(5deg);
+		}
+	}
 }

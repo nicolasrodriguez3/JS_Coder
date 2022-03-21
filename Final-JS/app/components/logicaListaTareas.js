@@ -1,12 +1,21 @@
+
 import { mostrarTareas } from "./mostrarTareas.js";
 
 export function logicaListaTareas(e) {
+	return false
+	const $form = d.querySelector(".form"),
+		$resultado = d.getElementById("resultado");
+		let tareas = JSON.parse(localStorage.getItem("listaTareas")) || [];
+
+		$resultado.appendChild = mostrarTareas(tareas);
+		$form.addEventListener("submit", logicaListaTareas);
+
 	e.preventDefault()
-	let tareas = JSON.parse(localStorage.getItem("listaTareas")) || [{
-		tarea: "tarea",
-		id: 1,
-		completada: false,
-	}];
+	// let tareas = JSON.parse(localStorage.getItem("listaTareas")) || [{
+	// 	tarea: "tarea",
+	// 	id: 1,
+	// 	completada: false,
+	// }];
 
 	const inputTarea = document.getElementById("tarea");
 	const form = document.querySelector("form");

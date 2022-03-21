@@ -101,16 +101,16 @@ body {
   flex-direction: column !important;
 }
 
-.form {
+.form-lista-tareas {
   display: flex;
   flex-direction: column;
   max-width: 500px;
 }
-.form label {
+.form-lista-tareas label {
   display: block;
   font-size: 1.2rem;
 }
-.form input {
+.form-lista-tareas input {
   margin: 0.6rem 0 1rem;
   padding: 0.5rem;
   background: none;
@@ -120,7 +120,7 @@ body {
   transition: all 0.2s;
   color: #f3f3f3;
 }
-.form input:focus-visible {
+.form-lista-tareas input:focus-visible {
   transform: scale(1.05);
   border-color: #ee63b9;
   outline: none;
@@ -142,6 +142,26 @@ ul li {
   list-style: none;
   width: 100%;
   text-align: center;
+}
+
+#go-back {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+#go-back a {
+  padding: 0;
+}
+#go-back svg {
+  width: 80px;
+  height: auto;
+  fill: #f3f3f3;
+}
+#go-back svg:hover {
+  fill: #86d828;
+}
+#go-back svg:active {
+  transform: rotate(5deg);
 }
 
 /*# sourceMappingURL=style.css.map */
