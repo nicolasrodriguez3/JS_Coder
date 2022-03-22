@@ -67,14 +67,6 @@ body {
   color: #f3f3f3;
 }
 
-@keyframes fondo {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
-}
 .titulo {
   text-align: center;
   margin-bottom: 2rem;
@@ -97,6 +89,10 @@ body {
   gap: 1rem;
 }
 
+.contenedor {
+  max-width: 500px;
+}
+
 .column {
   flex-direction: column !important;
 }
@@ -104,14 +100,15 @@ body {
 .form-lista-tareas {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 .form-lista-tareas label {
   display: block;
   font-size: 1.2rem;
 }
 .form-lista-tareas input {
-  margin: 0.6rem 0 1rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
   background: none;
   border: none;
@@ -126,16 +123,11 @@ body {
   outline: none;
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem 0;
-}
-
 #resultado {
-  width: 100vw;
-  max-width: 600px;
+  width: 100%;
+  border: 2px solid #86d828;
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
 }
 
 ul li {
@@ -162,6 +154,33 @@ ul li {
 }
 #go-back svg:active {
   transform: rotate(5deg);
+}
+
+.tachado {
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+#temporizador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#temporizador label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+#temporizador input {
+  color: #86d828;
+  padding: 0.5rem;
+  margin: 0.5rem 0 1rem;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  font-weight: bold;
+  width: 3ex;
 }
 
 /*# sourceMappingURL=style.css.map */

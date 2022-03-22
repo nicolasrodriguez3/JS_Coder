@@ -1,15 +1,13 @@
-import { obtenerDatos } from "./helpers/fetch.js";
-import { Title } from "./components/Title.js";
-import { Loader } from "./components/Loader.js";
-import { Apps } from "./components/Apps.js";
-import { Clock } from "./components/Clock.js";
-import { ListaTareas } from "./components/ListaTareas.js";
 import { Router } from "./components/Router.js";
-import { Home } from "./components/Home.js";
-import { GoBack } from "./components/GoBack.js";
+import { Loader } from "./components/Loader.js";
 
 export function App() {
-	
-	Router()
+	const $root = document.getElementById("root"),
+		tiempoAleatorio = (Math.random() * 500) + 500
+		
+	$root.innerHTML = null
+	$root.appendChild(Loader())
+
+	setTimeout(Router, tiempoAleatorio)
 	
 }
