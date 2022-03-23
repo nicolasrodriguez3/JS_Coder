@@ -165,22 +165,46 @@ ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 #temporizador label {
   display: flex;
   flex-direction: column;
+}
+#temporizador label p {
   font-size: 1.2rem;
+  text-align: center;
 }
 #temporizador input {
+  text-align: center;
+  width: 100px;
   color: #86d828;
-  padding: 0.5rem;
-  margin: 0.5rem 0 1rem;
+  margin-bottom: 1rem;
   background: none;
   border: none;
   font-size: 3rem;
   font-weight: bold;
-  width: 3ex;
+}
+#temporizador input[type=number] {
+  -moz-appearance: textfield;
+}
+#temporizador input[type=number]::-webkit-inner-spin-button,
+#temporizador input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#botones-temporizador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#temporizador-reloj {
+  font-size: 2rem;
+  margin: 1rem 0;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

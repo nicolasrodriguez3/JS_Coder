@@ -2,10 +2,12 @@ export function TemporizadorDOM() {
 	return `
 <div id="temporizador">
 	<label for="minutos" class="label-temporizador">
-		Min:<input type="number" id="minutos" min="0" max="99" value="1" placeholder="00"/>
+		<p>Min:</p>
+		<input type="number" id="minutos" min="0"  placeholder="00"/>
 	</label>
 	<label for="segundos" class="label-temporizador">
-		Seg:<input type="number" id="segundos" min="0" max="60" placeholder="00" />
+		<p>Seg:</p>
+		<input type="number" id="segundos" min="0" max="59" placeholder="00" />
 	</label>
 </div>
 
@@ -27,7 +29,8 @@ export function temporizador() {
 		$botonesTemporizador = d.getElementById("botones-temporizador"),
 		$btnIniciar = $botonesTemporizador.children[0],
 		$btnPausar = $botonesTemporizador.children[1],
-		$btnParar = $botonesTemporizador.children[2]
+		$btnParar = $botonesTemporizador.children[2],
+		sonido = new Audio("./app/assets/SD_ALERT.mp3");
 
 	let timer, segundosRestantes
 
@@ -39,11 +42,11 @@ export function temporizador() {
 	d.addEventListener("click", (e) => {
 		if (!e.target.matches("#iniciar-temporizador")) return false
 
-		let minutos = $minutos.value,
-		segundos = $segundos.value
+		let minutos = Number($minutos.value),
+			segundos = Number($segundos.value)
 
-		// si el temporizador esta en pausa, no recalcular los segundos restantes
-		if($temporizador.style.display == ""){
+		// si el temporizador estaba en pausa, no recalcular los segundos restantes
+		if ($temporizador.style.display === "") {
 			segundosRestantes = minutos * 60 + segundos
 		}
 
@@ -51,18 +54,27 @@ export function temporizador() {
 		$temporizador.style.display = "none"
 		$btnIniciar.style.display = "none"
 		$btnParar.style.display = ""
+		$btnParar.textContent = "Parar"
 		$btnPausar.style.display = ""
-		
-		//segundosRestantes = minutos * 60 + segundos 
-		console.log("hola")
 
-		$displayTemporizador.innerHTML = segundosRestantes
+		let min = Math.floor(Math.abs(segundosRestantes) / 60),
+					seg = ("0" + Math.abs(segundosRestantes) % 60).slice(-2)
+		$displayTemporizador.innerHTML = `${min}:${seg}`
+
 		timer = setInterval(() => {
 			segundosRestantes -= 1
-			$displayTemporizador.innerHTML = segundosRestantes
-			if (segundosRestantes < 0) {
-				clearInterval(timer)
-				console.log("fin")
+			let min = Math.floor(Math.abs(segundosRestantes) / 60),
+					seg = ("0" + Math.abs(segundosRestantes) % 60).slice(-2)
+			
+			if (segundosRestantes <= 0) {
+				//clearInterval(timer)
+				$displayTemporizador.innerHTML = `<p>Tiempo cumplido</p>-${min}:${seg}`
+				$btnPausar.style.display = "none"
+				$btnParar.textContent = "Volver"
+				//return
+				if (Math.abs(segundosRestantes) % 4 === 0 && segundosRestantes > -30) sonido.play()
+			} else {
+				$displayTemporizador.innerHTML = `${min}:${seg}`
 			}
 		}, 1000)
 	})
@@ -87,6 +99,9 @@ export function temporizador() {
 		$btnParar.style.display = "none"
 		$btnPausar.style.display = "none"
 
+		clearInterval(timer)
+	})
+	window.addEventListener("hashchange", ()=>{
 		clearInterval(timer)
 	})
 }
