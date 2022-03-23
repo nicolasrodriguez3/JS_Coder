@@ -1,3 +1,4 @@
+import { ClimaUI, mostrarClima } from "./Clima.js"
 import { GoBack } from "./GoBack.js"
 import { Home } from "./Home.js"
 import { ListaTareas } from "./ListaTareas.js"
@@ -19,7 +20,8 @@ export function Router() {
 		eventListenerSubmit()
 		mostrarTareas()
 	} else if (hash === "#/clima") {
-		$root.innerHTML = TemporizadorDOM()
+		$root.innerHTML = ClimaUI()
+		mostrarClima()
 	} else if (hash === "#/temporizador") {
 		$root.innerHTML = TemporizadorDOM()
 		temporizador()

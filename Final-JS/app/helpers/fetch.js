@@ -3,7 +3,6 @@ export function obtenerDatos(props) {
 	fetch(url)
 		.then((res) => (res.ok ? res.json() : Promise.reject()))
 		.then((datos) => {
-			console.log(datos);
 			funcion(datos);
 		})
 		.catch((err) => {

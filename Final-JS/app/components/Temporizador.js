@@ -48,6 +48,7 @@ export function temporizador() {
 		// si el temporizador estaba en pausa, no recalcular los segundos restantes
 		if ($temporizador.style.display === "") {
 			segundosRestantes = minutos * 60 + segundos
+			if (segundosRestantes <= 0) return false
 		}
 
 		$displayTemporizador.style.display = ""
