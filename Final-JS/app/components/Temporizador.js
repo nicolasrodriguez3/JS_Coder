@@ -38,10 +38,7 @@ export function temporizador() {
 	$btnParar.style.display = "none"
 	$btnPausar.style.display = "none"
 
-	// evento para iniciar el temporizador
-	d.addEventListener("click", (e) => {
-		if (!e.target.matches("#iniciar-temporizador")) return false
-
+	const iniciarTemporizador = () => {
 		let minutos = Number($minutos.value),
 			segundos = Number($segundos.value)
 
@@ -78,6 +75,16 @@ export function temporizador() {
 				$displayTemporizador.innerHTML = `${min}:${seg}`
 			}
 		}, 1000)
+	}
+	// evento para iniciar el temporizador
+	d.addEventListener("click", (e) => {
+		if (!e.target.matches("#iniciar-temporizador")) return false
+		iniciarTemporizador()
+	})
+	// iniciar el temporiador con enter
+	d.addEventListener("keydown", (e) => {
+		if (e.key !== "Enter") return false
+		iniciarTemporizador()
 	})
 
 	// evento para pausar el temporizador

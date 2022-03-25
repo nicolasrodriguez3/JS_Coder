@@ -126,11 +126,11 @@ h1 {
   gap: 1rem;
 }
 .footer p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
 }
 .footer .footer-logo {
-  width: 2rem;
+  width: 1.8rem;
 }
 .footer .footer-logo img {
   width: 100%;
@@ -238,7 +238,7 @@ ul li {
   flex-direction: column;
 }
 #temporizador label p {
-  font-size: 1.2rem;
+  font-size: calc(1rem + 1vw);
   text-align: center;
 }
 #temporizador input {
@@ -248,7 +248,7 @@ ul li {
   margin-bottom: 1rem;
   background: none;
   border: none;
-  font-size: 3rem;
+  font-size: calc(3rem + 1vw);
   font-weight: bold;
 }
 #temporizador input[type=number] {
@@ -268,8 +268,12 @@ ul li {
 }
 
 #temporizador-reloj {
-  font-size: 2rem;
+  font-size: calc(3rem + 1vw);
   margin: 1rem 0;
+  text-align: center;
+}
+#temporizador-reloj p {
+  font-size: calc(1rem + 1vw);
   text-align: center;
 }
 

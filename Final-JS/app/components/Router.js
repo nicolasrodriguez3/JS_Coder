@@ -1,4 +1,5 @@
 import { ClimaUI, mostrarClima } from "./Clima.js"
+import { Cronometro } from "./Cronometro.js"
 import { Footer } from "./Footer.js"
 import { GoBack } from "./GoBack.js"
 import { Home } from "./Home.js"
@@ -9,8 +10,6 @@ export function Router() {
 	const d = document,
 		{ hash } = location,
 		$root = d.getElementById("root")
-
-	console.log(hash)
 
 	if (!hash || hash === "#/") {
 		$root.innerHTML = null
@@ -25,10 +24,13 @@ export function Router() {
 	} else if (hash === "#/temporizador") {
 		$root.innerHTML = TemporizadorDOM()
 		temporizador()
+	} else if (hash === "#/cronometro") {
+		Cronometro()
 	} else {
 		Home()
 	}
+	
 	GoBack()
 	Footer()
-	d.querySelector("footer").classList.toggle("desaparecer")
+	//d.querySelector("footer").classList.toggle("desaparecer")
 }

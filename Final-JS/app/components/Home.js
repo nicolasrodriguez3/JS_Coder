@@ -15,6 +15,7 @@ export function Home() {
 			{ nombre: "Lista de tareas", hash: "#/lista-tareas" },
 			{ nombre: "Clima", hash: "#/clima" },
 			{ nombre: "Temporizador", hash: "#/temporizador" },
+			{ nombre: "Cronómetro", hash: "#/cronometro" },
 		]
 
 	apps.forEach(({ nombre, hash }) => {

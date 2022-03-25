@@ -1,11 +1,12 @@
 import { obtenerDatos } from "../helpers/fetch.js"
+import { Loader } from "../components/Loader.js"
 
 export function ClimaUI() {
 	return `
 	<div id="clima-ui">
 		<div id="el-clima">
 				<label for="ciudades">
-					<input type="text" name="ciudades" id="ciudades" list="lista-ciudades" autofocus>
+					<input type="text" name="ciudades" id="ciudades" list="lista-ciudades" autofocus autocomplete="off">
 				</label>
 				<datalist id="lista-ciudades"></datalist>
 				<input type="button" value="Consultar" id="consultar">
@@ -43,8 +44,8 @@ export function mostrarClima() {
 		if (!e.target.matches("#consultar")) return false
 		const d = document,
 			$inputUsuario = d.getElementById("ciudades"),
-			ciudadSeleccionada = ciudadesAPI.filter((ciudad) => ciudad.name === $inputUsuario.value),
-			{ name, weather } = ciudadSeleccionada[0],
+			ciudadSeleccionada = ciudadesAPI.filter((ciudad) => ciudad.name === $inputUsuario.value)
+			let { name, weather } = ciudadSeleccionada[0],
 			plantillaHTML = `
 			<h2>${name}</h2>
 			<p class="descripcion">${weather.description}</p>

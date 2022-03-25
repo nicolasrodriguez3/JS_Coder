@@ -80,11 +80,11 @@ h1{
 	flex-wrap: wrap;
 	gap: 1rem;
 	p {
-		font-size: 1.2rem;
+		font-size: 1rem;
 		text-align: center;
 	}
 	.footer-logo {
-		width: 2rem;
+		width: 1.8rem;
 		img {
 			width: 100%;
 		}
@@ -180,8 +180,6 @@ ul li {
 	}
 }
 
-
-
 #temporizador {
 	display: flex;
 	justify-content: center;
@@ -192,7 +190,7 @@ ul li {
 		display: flex;
 		flex-direction: column;
 		p {
-			font-size: 1.2rem;
+			font-size: calc(1rem + 1vw);
 			text-align: center;
 		}
 	}
@@ -203,7 +201,7 @@ ul li {
 		margin-bottom: 1rem;
 		background: none;
 		border: none;
-		font-size: 3rem;
+		font-size: calc(3rem + 1vw);
 		font-weight: bold;
 	}
 	input[type="number"] {
@@ -214,6 +212,7 @@ ul li {
 		-webkit-appearance: none;
 		margin: 0;
 	}
+
 }
 #botones-temporizador {
 	display: flex;
@@ -222,9 +221,13 @@ ul li {
 	gap: 1rem;
 }
 #temporizador-reloj {
-	font-size: 2rem;
+	font-size: calc(3rem + 1vw);
 	margin: 1rem 0;
 	text-align: center;
+	p{
+		font-size: calc(1rem + 1vw);
+		text-align: center;
+	}
 }
 #clima-ui {
 	input[type="text"] {
