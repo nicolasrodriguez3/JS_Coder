@@ -2,57 +2,64 @@ import { obtenerDatos } from "../helpers/fetch.js"
 
 export function ClimaUI() {
 	return `
-		<div class="elegir-ciudad">
-			<label for="ciudades">
-				<input type="search" name="ciudades" id="ciudades" list="lista-ciudades">
-			</label>
-			<datalist id="lista-ciudades"></datalist>
-			<input type="button" value="Consultar" id="consultar">
-		</div>
-		<div id="resultado"></div>
+	<div id="clima-ui">
+		<div id="el-clima">
+				<label for="ciudades">
+					<input type="text" name="ciudades" id="ciudades" list="lista-ciudades" autofocus>
+				</label>
+				<datalist id="lista-ciudades"></datalist>
+				<input type="button" value="Consultar" id="consultar">
+			</div>
+			<div id="resultado"></div>
+	</div>
 	`
 }
 export function mostrarClima() {
-	const d = document
+	const d = document,
+		$resultado = d.getElementById("resultado")
 	let ciudadesAPI
 
+	$resultado.style.display = "none"
 	obtenerDatos({
 		url: "https://ws.smn.gob.ar/map_items/weather",
 		//agregar las ciudades como opciones del input
 		funcion: (ciudades) => {
 			ciudadesAPI = ciudades
+
 			const $datalist = d.getElementById("lista-ciudades"),
 				$fragment = d.createDocumentFragment()
-			ciudades.forEach(ciudad => {
+
+			ciudades.forEach((ciudad) => {
 				const $option = d.createElement("option")
 				$option.value = ciudad.name
 				$fragment.appendChild($option)
-			});
+			})
+
 			$datalist.appendChild($fragment)
-			console.log("listo");
 		},
 	})
 
 	d.addEventListener("click", (e) => {
 		if (!e.target.matches("#consultar")) return false
 		const d = document,
-			$inputUsuario = d.getElementById("ciudades").value,
-			$resultado = d.getElementById("resultado")
-
-		const ciudadSeleccionada = ciudadesAPI.filter((ciudad)=> ciudad.name === $inputUsuario)
-		const {name, weather} = ciudadSeleccionada[0],
+			$inputUsuario = d.getElementById("ciudades"),
+			ciudadSeleccionada = ciudadesAPI.filter((ciudad) => ciudad.name === $inputUsuario.value),
+			{ name, weather } = ciudadSeleccionada[0],
 			plantillaHTML = `
 			<h2>${name}</h2>
-			<div class="grados">${weather.tempDesc}</div>
-			<div class="descripcion">${weather.description}</div>
-			<div class="mas-datos">
-				<div class="humedad">Humedad: ${weather.humidity}%</div>
-				<div class="visibilidad">Visibilidad: ${weather.visibility}Km</div>
-				<div class="viento">Viento: ${weather.wind_speed}Km/h ${weather.wing_deg}</div>
+			<p class="descripcion">${weather.description}</p>
+			<div class="datos">
+				<div class="grados">${weather.tempDesc}</div>
+				<div class="mas-datos">
+					<div class="humedad" title="Humedad">💧 <span>${weather.humidity}%</span></div>
+					<div class="visibilidad" title="Visibilidad">👀 <span>${weather.visibility}Km</span></div>
+					<div class="viento" title="Viento">🍃 <span>${weather.wing_deg}</span><br>💨 <span>${weather.wind_speed}Km/h</span> </div>
+				</div>
 			</div>
+			
 		`
 		$resultado.innerHTML = plantillaHTML
+		$resultado.style.display = ""
+		$inputUsuario.value = ""
 	})
-
-	
 }

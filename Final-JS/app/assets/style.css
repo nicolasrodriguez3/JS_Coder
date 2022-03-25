@@ -1,24 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Yellowtail&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
-.btn, .btn-secondary, .btn-primary {
+.btn, .btn-secondary, .btn-primary, #clima-ui #consultar {
   cursor: pointer;
   padding: 0.6rem 0.8rem;
   background: none;
   font-size: 1.2rem;
 }
-.btn:active, .btn-secondary:active, .btn-primary:active {
+.btn:active, .btn-secondary:active, .btn-primary:active, #clima-ui #consultar:active {
   transform: translateY(2px);
 }
 
-.btn-primary {
+.btn-primary, #clima-ui #consultar {
   color: #86d828;
   border: 2px solid #86d828;
   border-radius: 4px;
 }
-.btn-primary:hover {
+.btn-primary:hover, #clima-ui #consultar:hover {
   background-color: #86d828;
   color: #fff;
-  transition: all 0.3s transform 0.1s;
+  transition: all 0.3s, transform 0.1s;
 }
 
 .btn-secondary {
@@ -67,6 +66,29 @@ body {
   color: #f3f3f3;
 }
 
+h1 {
+  animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.apps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.apps a {
+  width: max-content;
+}
+
 .titulo {
   text-align: center;
   margin-bottom: 2rem;
@@ -91,6 +113,27 @@ body {
 
 .contenedor {
   max-width: 500px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 1%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.footer .footer-logo {
+  width: 2rem;
+}
+.footer .footer-logo img {
+  width: 100%;
 }
 
 .column {
@@ -123,17 +166,45 @@ body {
   outline: none;
 }
 
+.tarea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tarea span:first-child {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+.tarea:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.tachado {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.botones {
+  display: flex;
+  gap: 0.5rem;
+}
+.botones img {
+  width: 2rem;
+}
+.botones img:active {
+  transform: scale(0.9);
+}
+
 #resultado {
   width: 100%;
   border: 2px solid #86d828;
-  padding: 0.6rem 0.8rem;
+  padding: 0.8rem;
   border-radius: 4px;
 }
 
 ul li {
   list-style: none;
   width: 100%;
-  text-align: center;
 }
 
 #go-back {
@@ -154,11 +225,6 @@ ul li {
 }
 #go-back svg:active {
   transform: rotate(5deg);
-}
-
-.tachado {
-  opacity: 0.6;
-  transform: scale(0.9);
 }
 
 #temporizador {
@@ -205,6 +271,66 @@ ul li {
   font-size: 2rem;
   margin: 1rem 0;
   text-align: center;
+}
+
+#clima-ui input[type=text] {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #86d828;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  color: #f3f3f3;
+}
+#clima-ui input[type=text]:focus-visible {
+  border-color: #ee63b9;
+  outline: none;
+}
+#clima-ui #el-clima {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+#clima-ui #resultado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+#clima-ui #resultado .datos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+#clima-ui #resultado h2 {
+  font-size: calc(1.5rem + 2.8vw);
+  font-family: "Yellowtail", cursive;
+}
+#clima-ui #resultado .grados {
+  font-size: calc(2.2rem + 2.7vw);
+}
+#clima-ui #resultado .descripcion {
+  font-size: 1.2rem;
+}
+#clima-ui #resultado .mas-datos {
+  font-size: 1.2rem;
+}
+#clima-ui #resultado .mas-datos span {
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 600px) {
+  .apps {
+    flex-direction: row;
+  }
+
+  #el-clima {
+    gap: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

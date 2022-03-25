@@ -16,7 +16,7 @@
 	&:hover {
 		background-color: $primary;
 		color: #fff;
-		transition: all 0.3s transform 0.1s;
+		transition: all 0.3s, transform 0.1s;
 	}
 }
 .btn-secondary {

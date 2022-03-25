@@ -1,8 +1,8 @@
 import { ClimaUI, mostrarClima } from "./Clima.js"
+import { Footer } from "./Footer.js"
 import { GoBack } from "./GoBack.js"
 import { Home } from "./Home.js"
-import { ListaTareas } from "./ListaTareas.js"
-import { mostrarTareas, eventListenerSubmit } from "./mostrarTareas.js"
+import { ListaTareas, mostrarTareas, eventListenerSubmit } from "./ListaTareas.js"
 import { temporizador, TemporizadorDOM } from "./Temporizador.js"
 
 export function Router() {
@@ -28,7 +28,7 @@ export function Router() {
 	} else {
 		Home()
 	}
-
 	GoBack()
-
+	Footer()
+	d.querySelector("footer").classList.toggle("desaparecer")
 }

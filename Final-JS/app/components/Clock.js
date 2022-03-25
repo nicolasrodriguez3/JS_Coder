@@ -1,20 +1,19 @@
 export function Clock() {
-	const clock = document.createElement("div")
-	const today = new Date();
-	let hr = today.getHours();
-	let min = today.getMinutes();
-	let seg = today.getSeconds();
+	const $clock = document.createElement("div"),
+		mostrarReloj = () => {
+			let today = new Date(),
+				hr = today.getHours(),
+				min = today.getMinutes(),
+				seg = today.getSeconds()
 
-	//Agregar un cero adelante del numero si es menor a 10
-	min = agregarCero(min);
-	seg = agregarCero(seg);
+			//Agregar un cero adelante del numero si es menor a 10
+			min = ("0" + min).slice(-2)
+			seg = ("0" + seg).slice(-2)
 
-	clock.innerHTML = hr + ":" + min + ":" + seg;
-
-
-	function agregarCero(i) {
-		return i < 10 ? (i = "0" + i) : i;
-	}
-
-	return clock
+			$clock.innerHTML = hr + ":" + min + ":" + seg
+		}
+		
+	mostrarReloj()
+	setInterval(mostrarReloj, 1000)
+	return $clock
 }

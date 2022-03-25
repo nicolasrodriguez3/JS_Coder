@@ -1,5 +1,5 @@
-import { Router } from "./components/Router.js";
-import { Loader } from "./components/Loader.js";
+import { Router } from "./components/Router.js"
+import { Loader } from "./components/Loader.js"
 
 export function App() {
 	const $root = document.getElementById("root"),

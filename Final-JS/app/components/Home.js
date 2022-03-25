@@ -1,3 +1,5 @@
+import { Clock } from "./Clock.js"
+
 export function Home() {
 	const $root = document.getElementById("root"),
 		$h1 = document.createElement("h1")
@@ -5,6 +7,7 @@ export function Home() {
 	// Titulo
 	$h1.classList.add("titulo")
 	$h1.innerHTML = "Mini apps!"
+	$h1.appendChild(Clock())
 
 	// Links con las apps
 	const $div = document.createElement("div"),
@@ -22,6 +25,7 @@ export function Home() {
 		$div.appendChild($a)
 	})
 
+	$div.classList.add("apps")
 	$root.appendChild($h1)
 	$root.appendChild($div)
 }
