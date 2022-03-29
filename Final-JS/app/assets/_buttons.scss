@@ -25,3 +25,24 @@
 	border: none;
 	background: none;
 }
+
+.swal-button-confirm {
+	background: $primary !important;
+	border: 2px solid $primary !important;
+	color: $blanco !important;
+	font-weight: bold;
+	&:hover {
+		background: none !important;
+		color: $primary !important;
+		transition: all 0.3s, transform 0.1s;
+	}
+}
+.swal-button-cancel{
+	background: $primary;
+	color: $blanco;
+	&:hover {
+		background-color: $primary;
+		color: #fff;
+		transition: all 0.3s, transform 0.1s;
+	}
+}

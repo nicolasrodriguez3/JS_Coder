@@ -25,7 +25,7 @@ export function eventListenerSubmit() {
 	// marcar tareas como completada y agregarle la clase "tachada"
 	d.addEventListener("click", (e) => {
 		if (!e.target.matches(".btn-ok") && !e.target.matches(".btn-img-ok")) return false
-
+		e.stopImmediatePropagation()
 		let tareas = JSON.parse(localStorage.getItem("listaTareas"))
 		const id = e.target.dataset.id
 
@@ -40,19 +40,38 @@ export function eventListenerSubmit() {
 
 	// borrar tareas
 	d.addEventListener("click", (e) => {
-		if (!e.target.matches(".btn-borrar")) return false
+		if (!e.target.matches(".btn-borrar")) return false 
+		e.stopImmediatePropagation()
 		let tareas = JSON.parse(localStorage.getItem("listaTareas"))
 		const id = e.target.dataset.id
 
-		tareas.forEach((tarea, index) => {
-			if (tarea.id == id) {
-				tareas.splice(index, 1)
+		let tareaborrar = tareas.find((tarea) => tarea.id == id)
+		Swal.fire({
+			title: `¿Estás seguro de borrar la tarea ${tareaborrar.tarea}?`,
+			icon: 'question',
+			showCancelButton: true,
+			cancelButtonText: 'Cancelar',
+			confirmButtonText: 'Si, borrar',
+			customClass: {
+				confirmButton: 'swal-button-confirm',
+				cancelButton: 'swal-button-cancel',
+			}
+		}).then((result) => {
+			if (result.isConfirmed) {
+				tareas.forEach((tarea, index) => { if (tarea.id == id) tareas.splice(index, 1)	})
+				localStorage.setItem("listaTareas", JSON.stringify(tareas))
+				mostrarTareas(tareas)
+				Swal.fire({
+					title: 'Confirmado!',
+					text: 'La tarea fue borrada.',
+					icon: 'success',
+					customClass: {
+						confirmButton: 'swal-button-confirm'
+					}
+				})
 			}
 		})
-		localStorage.setItem("listaTareas", JSON.stringify(tareas))
-		mostrarTareas(tareas)
 	})
-	
 }
 
 // Esta funcion escribe las tareas en el DOM

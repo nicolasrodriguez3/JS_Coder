@@ -16,8 +16,8 @@ export function Router() {
 		Home()
 	} else if (hash === "#/lista-tareas") {
 		$root.innerHTML = ListaTareas()
-		eventListenerSubmit()
 		mostrarTareas()
+		setTimeout(eventListenerSubmit, 100)
 	} else if (hash === "#/clima") {
 		$root.innerHTML = ClimaUI()
 		mostrarClima()

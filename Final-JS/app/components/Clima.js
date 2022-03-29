@@ -1,5 +1,4 @@
 import { obtenerDatos } from "../helpers/fetch.js"
-import { Loader } from "../components/Loader.js"
 
 export function ClimaUI() {
 	return `
@@ -40,13 +39,17 @@ export function mostrarClima() {
 		},
 	})
 
-	d.addEventListener("click", (e) => {
-		if (!e.target.matches("#consultar")) return false
-		const d = document,
-			$inputUsuario = d.getElementById("ciudades"),
-			ciudadSeleccionada = ciudadesAPI.filter((ciudad) => ciudad.name === $inputUsuario.value)
-			let { name, weather } = ciudadSeleccionada[0],
-			plantillaHTML = `
+	setTimeout(() => {
+		d.addEventListener("click", (e) => {
+			if (!e.target.matches("#consultar")) return false
+			const $inputCiudad = d.getElementById("ciudades"),
+				ciudad = $inputCiudad.value.trim()
+			if (!ciudad) return false
+			const ciudadAPI = ciudadesAPI.find((c) => c.name === ciudad)
+			if (!ciudadAPI) return false
+
+			let { name, weather } = ciudadAPI,
+				plantillaHTML = `
 			<h2>${name}</h2>
 			<p class="descripcion">${weather.description}</p>
 			<div class="datos">
@@ -59,8 +62,10 @@ export function mostrarClima() {
 			</div>
 			
 		`
-		$resultado.innerHTML = plantillaHTML
-		$resultado.style.display = ""
-		$inputUsuario.value = ""
-	})
+			$resultado.innerHTML = plantillaHTML
+			$resultado.style.display = ""
+
+			$inputCiudad.value = ""
+		})
+	}, 100)
 }

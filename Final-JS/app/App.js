@@ -7,7 +7,7 @@ export function App() {
 
 	$root.innerHTML = null
 	$root.appendChild(Loader())
-
+	
 	setTimeout(Router, tiempoAleatorio)
 
 	document.addEventListener("keydown", (e) => {

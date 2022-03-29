@@ -26,6 +26,28 @@
   background: none;
 }
 
+.swal-button-confirm {
+  background: #86d828 !important;
+  border: 2px solid #86d828 !important;
+  color: #f3f3f3 !important;
+  font-weight: bold;
+}
+.swal-button-confirm:hover {
+  background: none !important;
+  color: #86d828 !important;
+  transition: all 0.3s, transform 0.1s;
+}
+
+.swal-button-cancel {
+  background: #86d828;
+  color: #f3f3f3;
+}
+.swal-button-cancel:hover {
+  background-color: #86d828;
+  color: #fff;
+  transition: all 0.3s, transform 0.1s;
+}
+
 a {
   color: azure;
   padding: 0.5rem;
@@ -116,8 +138,10 @@ h1 {
 }
 
 .footer {
-  position: absolute;
-  bottom: 1%;
+  background: linear-gradient(to bottom, #61616100 0%, #000000cc 100%);
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 1%;
   width: 100%;
   display: flex;
   justify-content: center;

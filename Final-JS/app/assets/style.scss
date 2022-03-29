@@ -71,8 +71,10 @@ h1 {
 	max-width: 500px;
 }
 .footer {
-	position: absolute;
-	bottom: 1%;
+	background:  linear-gradient(to bottom, #61616100 0%, #000000cc 100%);
+	position: fixed;
+	bottom: 0;
+	padding-bottom: 1%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
