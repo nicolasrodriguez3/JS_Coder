@@ -327,6 +327,29 @@ ul li {
   line-height: 1.5;
 }
 
+.cronometro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cronometro div {
+  display: flex;
+  flex-direction: column;
+}
+.cronometro div span.numeros {
+  font-size: calc(3rem + 1vw);
+  font-weight: bold;
+}
+
+.cronometro-botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 @media screen and (min-width: 600px) {
   .apps {
     flex-direction: row;

@@ -25,7 +25,7 @@ body {
 	background-position: center;
 	color: $blanco;
 }
-h1{
+h1 {
 	animation: aparecer 1.5s ease;
 }
 @keyframes aparecer {
@@ -120,16 +120,16 @@ h1{
 		}
 	}
 }
-.tarea{
+.tarea {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	span:first-child{
-		margin-right: .5rem;
+	span:first-child {
+		margin-right: 0.5rem;
 		font-size: 1.2rem;
 	}
-	&:not(:last-child){
-		margin-bottom: .5rem;
+	&:not(:last-child) {
+		margin-bottom: 0.5rem;
 	}
 }
 .tachado {
@@ -137,12 +137,12 @@ h1{
 	//transform: scale(0.9);
 	font-style: italic;
 }
-.botones{
+.botones {
 	display: flex;
-	gap: .5rem;
-	img{
+	gap: 0.5rem;
+	img {
 		width: 2rem;
-		&:active{
+		&:active {
 			transform: scale(0.9);
 		}
 	}
@@ -212,7 +212,6 @@ ul li {
 		-webkit-appearance: none;
 		margin: 0;
 	}
-
 }
 #botones-temporizador {
 	display: flex;
@@ -224,7 +223,7 @@ ul li {
 	font-size: calc(3rem + 1vw);
 	margin: 1rem 0;
 	text-align: center;
-	p{
+	p {
 		font-size: calc(1rem + 1vw);
 		text-align: center;
 	}
@@ -286,6 +285,30 @@ ul li {
 		}
 	}
 }
+
+.cronometro {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	div {
+		display: flex;
+		flex-direction: column;
+
+		span.numeros {
+			font-size: calc(3rem + 1vw);
+			font-weight: bold;
+		}
+	}
+}
+.cronometro-botones {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
 @media screen and (min-width: 600px) {
 	.apps {
 		flex-direction: row;
