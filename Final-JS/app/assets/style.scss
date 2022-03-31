@@ -156,6 +156,7 @@ h1 {
 	border-radius: 4px;
 }
 
+
 ul li {
 	list-style: none;
 	width: 100%;
@@ -309,6 +310,28 @@ ul li {
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
+}
+
+.clima-loader{
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+}
+.div-error{
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	.btn-recargar{
+		@extend .btn-primary;
+		
+	}
 }
 
 @media screen and (min-width: 600px) {

@@ -1,4 +1,5 @@
 import { obtenerDatos } from "../helpers/fetch.js"
+import { Loader } from "./Loader.js"
 
 export function ClimaUI() {
 	return `
@@ -16,10 +17,17 @@ export function ClimaUI() {
 }
 export function mostrarClima() {
 	const d = document,
-		$resultado = d.getElementById("resultado")
+		$resultado = d.getElementById("resultado"),
+		$loader = d.createElement("div")
 	let ciudadesAPI
 
+	$loader.classList.add("clima-loader")
+	$loader.innerHTML = ""
+	$loader.appendChild(Loader())
+	d.body.appendChild($loader)
+
 	$resultado.style.display = "none"
+
 	obtenerDatos({
 		url: "https://ws.smn.gob.ar/map_items/weather",
 		//agregar las ciudades como opciones del input
@@ -35,10 +43,14 @@ export function mostrarClima() {
 				$fragment.appendChild($option)
 			})
 
+			//quitar el loader secundario cuando carguen las ciudades
+			$loader.remove()
+
 			$datalist.appendChild($fragment)
 		},
 	})
 
+	//retrasar 100ms la escucha del evento clic, para darle tiempo a crear los elementos del DOM
 	setTimeout(() => {
 		d.addEventListener("click", (e) => {
 			if (!e.target.matches("#consultar")) return false
